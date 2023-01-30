@@ -1,19 +1,11 @@
-import React from "react";
+import QuoteList from "../components/quotes/QuoteList";
 
+const DUMMY_QUOTES = [
+  { id: "q1", author: "Max", text: "Learning React is fun !" },
+  { id: "q2", author: "Rania", text: "Learning React is great !" },
+];
 function AllQuotes() {
-  return (
-    <section>
-      <div>Quotes Page</div>
-      <ul>
-        <li>
-          <Link to="/quotes/q1">Quote1</Link>
-          <Link to="/quotes/q2">Quote1</Link>
-          <Link to="/quotes/q3">Quote1</Link>
-          <Link to="/quotes/q4">Quote1</Link>
-        </li>
-      </ul>
-    </section>
-  );
+  return <QuoteList quotes={DUMMY_QUOTES} />;
 }
 
 export default AllQuotes;
