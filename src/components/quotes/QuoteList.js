@@ -28,7 +28,15 @@ const QuoteList = (props) => {
   const changeSortingHandler = () => {
     //change the URL page
     //add query parameters (sort)
-    history.push("/quotes?sort=" + (isSortingAscending ? "desc" : "asc"));
+    //push URL AS an object
+    history.push({
+      pathname: location.pathname,
+      search: `?sort=${isSortingAscending ? "desc" : "asc"}`,
+    });
+    /* or push URL as a string
+    history.push(
+      `${location.pathname}?sort=${isSortingAscending ? "desc" : "asc"}`
+    );*/
   };
   return (
     <Fragment>
