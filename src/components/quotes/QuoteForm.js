@@ -19,17 +19,26 @@ const QuoteForm = (props) => {
 
     props.onAddQuote({ author: enteredAuthor, text: enteredText });
   }
+  //Trigger the finishing entering
   const finishEnteringHandler = () => {
     setIsEntering(false);
   };
+
+  //When clicking anywhere in the form
   const formFocusedHandler = () => {
+    //The user start entering info in the for
     setIsEntering(true);
   };
 
   return (
     <>
+      {/* Prompt is a component that watch if we navigate away 
+      and show an alert if a condition is validated
+      In our case, it will alert us if the user start the form and he decide to navigate 
+      to an other page*/}
       <Prompt
         when={isEntering}
+        /* location argument is the path which user try to go in*/
         message={(location) =>
           "Are you sure you want to leave ? All your entered data will be lost! "
         }
