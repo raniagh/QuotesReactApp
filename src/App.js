@@ -15,7 +15,7 @@ function App() {
         <Route path="/quotes" exact>
           <AllQuotes />
         </Route>
-        {/* quoteId is a regular parameter, only load the QuteDetail if there is an id*/}
+        {/* quoteId is a regular parameter, only load the QuoteDetail if there is an id*/}
         <Route path="/quotes/:quoteId">
           <QuoteDetail />
         </Route>
